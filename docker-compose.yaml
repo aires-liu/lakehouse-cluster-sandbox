@@ -1,6 +1,6 @@
 services:
   spark-master:
-    image: bitnami/spark:3.3.0
+    image: bitnamilegacy/spark:3.3.0
     container_name: spark-master
     environment:
       SPARK_MODE: master
@@ -8,7 +8,7 @@ services:
       - "8080"
 
   spark-worker:
-    image: bitnami/spark:3.3.0
+    image: bitnamilegacy/spark:3.3.0
     container_name: spark-worker
     environment:
       SPARK_MODE: worker

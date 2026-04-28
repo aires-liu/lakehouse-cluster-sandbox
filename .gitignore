@@ -70,6 +70,8 @@ derby.log
 *.pem
 *.key
 *.crt
+uv.lock
+pyproject.toml
 
 # =========================
 # Runtime temp files
