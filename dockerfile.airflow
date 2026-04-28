@@ -1,0 +1,45 @@
+FROM apache/airflow:2.7.1
+
+USER root
+
+# Layer 1: System dependencies
+RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y tar ca-certificates git curl openjdk-11-jdk-headless && \
+    rm -rf /var/lib/apt/lists/*
+
+# Layer 2: Download and install Spark 3.3.0
+RUN curl -fSL https://mirrors.huaweicloud.com/apache/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz \
+         -o /tmp/spark.tgz && \
+    mkdir -p /opt/spark && \
+    tar -xzf /tmp/spark.tgz -C /opt/ && \
+    mv /opt/spark-3.3.0-bin-hadoop3/* /opt/spark/ && \
+    rm -rf /opt/spark-3.3.0-bin-hadoop3 /tmp/spark.tgz
+
+# Layer 3: Download JAR dependencies from Aliyun Maven mirror (one layer per JAR)
+RUN curl -fSL https://maven.aliyun.com/repository/central/org/apache/hadoop/hadoop-aws/3.3.2/hadoop-aws-3.3.2.jar \
+         -o /opt/spark/jars/hadoop-aws-3.3.2.jar
+
+RUN curl -fSL https://maven.aliyun.com/repository/central/com/amazonaws/aws-java-sdk-bundle/1.12.180/aws-java-sdk-bundle-1.12.180.jar \
+         -o /opt/spark/jars/aws-java-sdk-bundle-1.12.180.jar
+
+RUN curl -fSL https://maven.aliyun.com/repository/central/org/apache/iceberg/iceberg-spark-runtime-3.3_2.12/1.1.0/iceberg-spark-runtime-3.3_2.12-1.1.0.jar \
+         -o /opt/spark/jars/iceberg-spark-runtime-3.3_2.12-1.1.0.jar
+
+RUN curl -fSL https://maven.aliyun.com/repository/central/software/amazon/awssdk/bundle/2.17.230/bundle-2.17.230.jar \
+         -o /opt/spark/jars/bundle-2.17.230.jar
+
+RUN curl -fSL https://maven.aliyun.com/repository/central/software/amazon/awssdk/url-connection-client/2.17.230/url-connection-client-2.17.230.jar \
+         -o /opt/spark/jars/url-connection-client-2.17.230.jar
+
+ENV AWS_REGION=us-east-1
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV SPARK_HOME=/opt/spark
+ENV PATH="$SPARK_HOME/bin:$JAVA_HOME/bin:$PATH"
+
+USER airflow
+COPY ./cluster_resources/airflow_utils/requirements.txt /requirements.txt
+RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip install --no-cache-dir -r /requirements.txt
+
+ENTRYPOINT ["/entrypoint.sh"]

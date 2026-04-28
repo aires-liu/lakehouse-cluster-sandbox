@@ -1,0 +1,15 @@
+-i https://pypi.tuna.tsinghua.edu.cn/simple
+pyspark==3.3.0
+great_expectations==0.18.12
+notebook==6.5.7
+s3fs~=2023.9.0
+XlsxWriter~=3.2.0
+xlrd==2.0.1
+boto3==1.28.17
+pandas==1.5.3
+smbprotocol
+openpyxl
+pyarrow==9.0.0
+pendulum==2.1.2
+psycopg2-binary>=2.9.9
+apache-airflow-providers-apache-spark==4.0.1

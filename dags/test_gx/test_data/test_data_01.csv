@@ -1,0 +1,31 @@
+order_id,price,payment_method,user_id,product_id,quantity,order_date,status,city,discount
+1001,190.4,bank_transfer,10161,180,5,2025-05-01,cancelled,Patelberg,0.36
+1002,475.6,,14297,107,7,2024-12-01,cancelled,West Brian,0.07
+1003,367.34,credit_card,10995,134,7,2025-07-08,pending,Judyland,0.5
+1004,301.34,paypal,17629,134,9,2024-12-10,refunded,Coryside,0.13
+1005,82.23,cash,19467,132,3,2024-10-23,cancelled,Russellstad,0.49
+1006,82.22,credit_card,11016,104,7,2025-04-06,paid,West Monicaville,0.21
+1007,33.75,cash,17869,140,1,2024-11-09,pending,Port Jermaineland,0.02
+1008,433.76,paypal,16439,127,4,2025-04-11,paid,East Autumnmouth,0.17
+1009,302.55,paypal,17892,106,4,2025-03-14,paid,Davisshire,0.32
+1010,355.5,credit_card,16863,172,5,2024-11-14,cancelled,East Deniseville,0.34
+1011,15.19,paypal,17916,171,7,2025-07-05,pending,East Williamville,0.27
+1012,485.11,,18529,111,7,2025-04-28,refunded,Lisahaven,0.22
+1013,417.06,paypal,10878,133,4,2025-01-19,refunded,Howardbury,0.28
+1014,110.11,cash,19268,132,7,2025-04-02,cancelled,Donaldberg,0.3
+1015,95.0,cash,14887,147,3,2025-06-13,cancelled,New Aaronberg,0.04
+1016,95.79,cash,14859,122,6,2025-05-09,pending,Lake Melissatown,0.18
+1017,155.6,cash,16331,161,2,2024-09-07,refunded,Lake William,0.12
+1018,264.75,,18571,187,9,2025-03-19,refunded,Onealburgh,0.4
+1019,218.81,bank_transfer,18684,136,5,2024-12-28,refunded,New Jared,0.24
+1020,149.16,credit_card,17208,198,6,2025-02-10,paid,Port Stephenshire,0.49
+1021,307.87,cash,15276,143,4,2024-10-25,refunded,Cassandrabury,0.2
+1022,74.05,paypal,12062,185,7,2024-10-03,paid,Port Christine,0.41
+1023,149.61,cash,10064,190,9,2024-07-14,pending,North Jenniferton,0.4
+1024,186.35,paypal,18006,134,7,2024-12-15,paid,Ericview,0.08
+1025,230.75,paypal,12568,164,1,2024-07-17,pending,Singhfurt,0.25
+1026,393.66,cash,15463,198,1,2024-12-29,refunded,Jamestown,0.35
+1027,103.84,,12027,146,9,2025-04-18,refunded,Williamsland,0.43
+1028,259.55,paypal,12695,177,9,2024-09-08,pending,Port Williamburgh,0.16
+1029,298.25,paypal,19687,102,4,2024-07-13,cancelled,Julieton,0.11
+1030,27.99,cash,15258,100,9,2025-02-16,pending,Wilsonfurt,0.36

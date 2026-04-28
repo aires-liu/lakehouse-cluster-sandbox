@@ -1,0 +1,11 @@
+FROM minio/minio:RELEASE.2025-02-03T21-03-04Z
+
+USER root
+RUN curl -Lo /usr/local/bin/mc https://dl.min.io/client/mc/release/linux-amd64/mc && \
+    chmod +x /usr/local/bin/mc
+
+COPY ./cluster_resources/minio_utils/minio-init.sh /minio-init.sh
+COPY ./dags/test_gx/test_data/ /test_data/
+RUN chmod +x /minio-init.sh
+
+ENTRYPOINT ["/minio-init.sh"]

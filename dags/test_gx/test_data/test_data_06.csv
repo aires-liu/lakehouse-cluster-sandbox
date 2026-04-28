@@ -1,0 +1,13 @@
+id,date,product,price,quantity,amount,region,salesman
+1,2023-01-01,phone,100,2,200,North,John
+2,2023-01-01,phone,150,1,150,South,Jane
+3,2023-01-02,,,3,600,East,Bob
+4,2023-01-02,car,,4,1000,West,Alice
+5,2023-01-03,,300,1,300,North,Charlie
+6,2023-01-03,tablet,350,2,700,South,Dave
+7,2023-01-04,,400,1,400,East,Eve
+8,2023-01-04,,450,3,1350,West,Frank
+9,2023-01-05,apple,500,2,1000,North,Grace
+10,2023-01-05,apple,250,6,1500,,Eve
+11,2023-01-05,,200,5,1000,South,Hank
+12,2023-01-05,banana,300,4,1200,,Ivy

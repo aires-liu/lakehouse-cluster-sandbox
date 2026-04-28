@@ -1,0 +1,154 @@
+{
+  "success": false, // 整体验证结果, 表示是否所有期望规则都通过
+  "results": [ // 每个期望规则的验证结果列表, 每个元素就是一条规则的验证结果详情
+    {
+      "success": false, // 期望验证结果
+      "expectation_config": { // 期望的配置
+        "expectation_type": "expect_column_values_to_be_between", // 期望类型
+        "kwargs": {
+          "column": "discount", // 期望校验的字段
+          "min_value": 0.2, // 该期望的特定参数
+          "result_format": "COMPLETE" // 结果格式, BASIC表示只返回基本信息
+        },
+        "meta": {} // 期望的说明、标签、备注等
+      },
+      "result": { // 期望验证结果
+        "element_count": 30, // 验证数据的总行数
+        "missing_count": 0, // 验证中缺失值的行数，对于该期望空值不算unexpected
+        "missing_percent": 0.0, // 验证中缺失值的行数占验证总行数的百分比
+        "unexpected_count": 10, // 验证中不符合期望的行数
+        "unexpected_percent": 33.33333333333333, // 不符合期望的行数占验证总行数的百分比
+        "unexpected_percent_total": 33.33333333333333, // 总计不符合期望的行数占总行数的百分比，在分组统计时和unexpected_percent有差异
+        "unexpected_percent_nonmissing": 33.33333333333333, // 不符合期望的行数占非缺失总行数的百分比
+        "partial_unexpected_list": [ // 不符合期望的部分值列表
+          0.07,
+          0.13,
+          0.02,
+          0.17,
+          0.04,
+          0.18,
+          0.12,
+          0.08,
+          0.16,
+          0.11
+        ],
+        "partial_unexpected_index_list": [ // 不符合期望的部分值对应的行索引列表
+          1,
+          3,
+          6,
+          7,
+          14,
+          15,
+          16,
+          23,
+          27,
+          28
+        ],
+        "partial_unexpected_counts": [ // 不符合期望的部分值及其出现次数
+          {
+            "value": 0.07,
+            "count": 1
+          },
+          {
+            "value": 0.13,
+            "count": 1
+          },
+          {
+            "value": 0.02,
+            "count": 1
+          },
+          {
+            "value": 0.04,
+            "count": 1
+          },
+          {
+            "value": 0.07,
+            "count": 1
+          },
+          {
+            "value": 0.08,
+            "count": 1
+          },
+          {
+            "value": 0.11,
+            "count": 1
+          },
+          {
+            "value": 0.12,
+            "count": 1
+          },
+          {
+            "value": 0.13,
+            "count": 1
+          },
+          {
+            "value": 0.16,
+            "count": 1
+          },
+          {
+            "value": 0.17,
+            "count": 1
+          },
+          {
+            "value": 0.18,
+            "count": 1
+          }
+        ],
+        "unexpected_list": [ // 不符合期望的完整值列表
+          0.07,
+          0.13,
+          0.02,
+          0.17,
+          0.04,
+          0.18,
+          0.12,
+          0.08,
+          0.16,
+          0.11
+        ],
+        "unexpected_index_list": [ // 不符合期望的值对应的完整行索引列表
+          1,
+          3,
+          6,
+          7,
+          14,
+          15,
+          16,
+          23,
+          27,
+          28
+        ]
+      },
+      "meta": {}, // 本次校验结果的附加信息
+      "exception_info": { // 异常信息
+        "raised_exception": false, // 是否抛出异常
+        "exception_message": null, // 自定义的异常信息内容
+        "exception_traceback": null // 运行中抛出的异常信息
+      }
+    }
+  ],
+  "evaluation_parameters": {}, // 评估参数, 用于动态期望规则的参数化, 这里为空表示没有使用
+  "statistics": { // 统计信息, 包括期望规则的总数、成功数、失败数等
+    "evaluated_expectations": 23, // 评估的期望规则总数
+    "successful_expectations": 12, // 成功的期望规则数
+    "unsuccessful_expectations": 11, // 失败的期望规则数
+    "success_percent": 52.17391304347826 // 成功的期望规则占总数的百分比
+  },
+  "meta": { // 本次校验结果的附加信息
+    "great_expectations_version": "0.18.2", // 使用的GX版本
+    "expectation_suite_name": "default", // 期望规则集名称, 这里是默认的
+    "run_id": { // 运行ID, 用于标识本次校验
+      "run_name": null,
+      "run_time": "2025-07-11T11:17:12.760863+08:00"
+    },
+    "batch_kwargs": { // 批处理参数, 包括数据源、数据路径等，校验批就是单次校验的数据源快照
+      "ge_batch_id": "89bf9bae-5e05-11f0-870c-e0d4648bf6a9" // 批处理ID，唯一标识
+    },
+    "batch_markers": {}, // 批处理标记, 用于标识批处理的元数据, 这里为空表示没有使用
+    "batch_parameters": {},
+    "validation_time": "20250711T031712.760863Z",
+    "expectation_suite_meta": {
+      "great_expectations_version": "0.18.2"
+    }
+  }
+}
