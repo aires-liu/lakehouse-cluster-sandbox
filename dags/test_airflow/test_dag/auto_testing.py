@@ -63,9 +63,9 @@ with DAG(
         )
         trigger_tasks.append(trigger_task)
 
-    gx_auto_testing = PythonOperator(
+    test_gx = PythonOperator(
         task_id="gx_auto_testing",
         python_callable=run_gx_auto_testing_script
     )
 
-    trigger_tasks >> gx_auto_testing
+    trigger_tasks >> test_gx

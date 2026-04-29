@@ -42,7 +42,7 @@ with DAG(
     start_date=datetime(2023, 1, 1),
     schedule_interval=None,
     catchup=False,
-    tags=["test", "gx", "custom operator"],
+    tags=["test", "gx", "operator"],
     params={"run_timestamp": datetime.now().strftime('%Y%m%d%H%M%S')},
     is_paused_upon_creation=False
 ) as dag:

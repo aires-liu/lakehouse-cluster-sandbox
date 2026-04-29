@@ -23,14 +23,14 @@ with DAG(
     dag_id=dag_id,
     start_date=datetime(2023, 1, 1),
     schedule_interval=None,
-    catchup=False,
-    tags=["iceberg", "smoke_test", "spark"],
+    catchup=False, # 不执行历史任务
+    tags=["iceberg", "spark"],
     is_paused_upon_creation=False,
 ) as dag:
 
     iceberg_smoke_test = SparkSubmitOperator(
         task_id="iceberg_smoke_test",
-        application=f"{project_dir}/spark_jobs/iceberg_smoke_test.py",
+        application=f"{project_dir}/spark_jobs/iceberg_conn_test.py",
         conn_id="spark_default",
         jars=ICEBERG_JARS,
         application_args=[
